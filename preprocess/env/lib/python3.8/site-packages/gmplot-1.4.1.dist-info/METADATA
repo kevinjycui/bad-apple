@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: gmplot
+Version: 1.4.1
+Summary: A matplotlib-like interface to plot data with Google Maps.
+Home-page: UNKNOWN
+Author: gmplot contributors
+License: MIT
+Project-URL: Documentation, https://github.com/gmplot/gmplot/wiki
+Project-URL: Tracker, https://github.com/gmplot/gmplot/issues
+Project-URL: Source, https://github.com/gmplot/gmplot
+Keywords: python google-maps visualization
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: requests
+
+gmplot |PyVersions|_
+====================
+.. |PyVersions| image:: https://img.shields.io/pypi/pyversions/gmplot?style=flat-square
+.. _PyVersions: https://www.python.org/
+
+A matplotlib-like interface to render all the data you'd like on top of Google Maps.
+
+Several plotting methods make creating exploratory map views effortless.
+
+To install: ``pip install gmplot``
+
+Documentation (with examples): `API Reference <https://github.com/gmplot/gmplot/wiki>`_
+
+Crash course
+------------
+
+.. code:: python
+
+    import gmplot
+
+    # Create the map plotter:
+    apikey = '' # (your API key here)
+    gmap = gmplot.GoogleMapPlotter(37.766956, -122.448481, 14, apikey=apikey)
+
+    # Outline the Golden Gate Park:
+    golden_gate_park = zip(*[
+        (37.771269, -122.511015),
+        (37.773495, -122.464830),
+        (37.774797, -122.454538),
+        (37.771988, -122.454018),
+        (37.773646, -122.440979),
+        (37.772742, -122.440797),
+        (37.771096, -122.453889),
+        (37.768669, -122.453518),
+        (37.766227, -122.460213),
+        (37.764028, -122.510347)
+    ])
+    gmap.polygon(*golden_gate_park, color='cornflowerblue', edge_width=10)
+
+    # Highlight some attractions:
+    attractions_lats, attractions_lngs = zip(*[
+        (37.769901, -122.498331),
+        (37.768645, -122.475328),
+        (37.771478, -122.468677),
+        (37.769867, -122.466102),
+        (37.767187, -122.467496),
+        (37.770104, -122.470436)
+    ])
+    gmap.scatter(attractions_lats, attractions_lngs, color='#3B0B39', size=40, marker=False)
+
+    # Mark a hidden gem:
+    gmap.marker(37.770776, -122.461689, color='cornflowerblue')
+
+    # Draw the map:
+    gmap.draw('map.html')
+
+.. image:: https://raw.githubusercontent.com/gmplot/gmplot/master/docs/images/README_Example.png
+
+----
+
+Inspired by Yifei Jiang's (jiangyifei@gmail.com) `pygmaps <http://code.google.com/p/pygmaps/>`_ module.
+
+

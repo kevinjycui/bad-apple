@@ -1,0 +1,1 @@
+PNGs cloned from [Fukv's Firefox implementation](https://github.com/Fukv/BadAppleButFirefoxTabs)

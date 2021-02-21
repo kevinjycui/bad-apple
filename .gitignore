@@ -1,0 +1,11 @@
+env/*
+
+.env
+*/.env
+
+*/public/*
+.cache/*
+*.cache/*
+
+node_modules/*
+*/node_modules/*
