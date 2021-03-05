@@ -1,1 +1,0 @@
-from .gmplot import GoogleMapPlotter
