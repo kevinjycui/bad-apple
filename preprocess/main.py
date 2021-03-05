@@ -28,8 +28,9 @@ for i in range(FRAMES):
         matrix.append(row)
     matrix_arr.append(matrix)
 
-with open('../frontend/public/frame_data.json', 'w+') as f:
-    json.dump(matrix_arr, f)
+# Save matrix to gmaps public
+# with open('../frontend/public/frame_data.json', 'w+') as f:
+#     json.dump(matrix_arr, f)
 
 # Simple command-line example test
 #
