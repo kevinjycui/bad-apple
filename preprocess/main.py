@@ -21,16 +21,22 @@ for i in range(FRAMES):
     for x in range(HEIGHT):
         row = []
         for y in range(WIDTH):
-            if px[y,x][0] < 125:
+            # if px[y,x][0] < 125:
+            #     row.append(1)
+            # else:
+            #     row.append(0)
+            if px[y,x][0] < 85:
                 row.append(1)
-            else:
+            elif px[y,x][0] > 170:
                 row.append(0)
+            else:
+                row.append(2)
         matrix.append(row)
     matrix_arr.append(matrix)
 
-# Save matrix to gmaps public
-# with open('../frontend/public/frame_data.json', 'w+') as f:
-#     json.dump(matrix_arr, f)
+# Save matrix
+with open('data2.json', 'w+') as f:
+    json.dump(matrix_arr, f)
 
 # Simple command-line example test
 #

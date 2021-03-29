@@ -1,0 +1,2 @@
+@{Microsoft.ZuneMusic_10.20122.11121.0_x64__8wekyb3d8bbwe?ms-resource://Microsoft.ZuneMusic/Files/Assets/FileExtension.png}
+@{Microsoft.ZuneVideo_10.21021.10311.0_x64__8wekyb3d8bbwe?ms-resource://Microsoft.ZuneVideo/Files/Assets/FileExtension.png}
