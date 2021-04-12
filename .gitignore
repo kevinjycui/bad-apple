@@ -22,3 +22,5 @@ april-fools/output.txt
 april-fools/error.txt
 
 *.log
+
+vscode-formatter/test/*
