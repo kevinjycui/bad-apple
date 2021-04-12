@@ -4,13 +4,19 @@ import time
 import os
 import json
 
+# WIDTH = 36
+# HEIGHT = 28
+# FRAMES = 4382
+
 WIDTH = 36
 HEIGHT = 28
-FRAMES = 4382
-FPS = 24
+FRAMES = 4383
+FPS = 60
 
-BASE_PNG_DIR = 'pngs'
-BASE_PNG_PATH = BASE_PNG_DIR + '/png%d.png'
+# BASE_PNG_DIR = 'pngs'
+# BASE_PNG_PATH = BASE_PNG_DIR + '/png%d.png'
+BASE_PNG_DIR = 'frames'
+BASE_PNG_PATH = BASE_PNG_DIR + '/frame%d.png'
 
 matrix_arr = []
 
@@ -21,21 +27,21 @@ for i in range(FRAMES):
     for x in range(HEIGHT):
         row = []
         for y in range(WIDTH):
-            # if px[y,x][0] < 125:
-            #     row.append(1)
-            # else:
-            #     row.append(0)
-            if px[y,x][0] < 85:
+            if px[y,x][0] < 125:
                 row.append(1)
-            elif px[y,x][0] > 170:
-                row.append(0)
             else:
-                row.append(2)
+                row.append(0)
+            # if px[y,x][0] < 85:
+            #     row.append(1)
+            # elif px[y,x][0] > 170:
+            #     row.append(0)
+            # else:
+            #     row.append(2)
         matrix.append(row)
     matrix_arr.append(matrix)
 
 # Save matrix
-with open('data2.json', 'w+') as f:
+with open('data-hd.json', 'w+') as f:
     json.dump(matrix_arr, f)
 
 # Simple command-line example test

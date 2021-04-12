@@ -11,6 +11,9 @@ env/*
 node_modules/*
 */node_modules/*
 
+__pycache__/*
+*/__pycache__/*
+
 .vscode/*
 *./vscode/*
 
