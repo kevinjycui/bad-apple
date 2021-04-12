@@ -20,3 +20,5 @@ __pycache__/*
 april-fools/main
 april-fools/output.txt
 april-fools/error.txt
+
+*.log
