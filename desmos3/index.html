@@ -1,0 +1,68 @@
+<script src="https://www.desmos.com/api/v1.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<html lang='en'>
+   <head>
+      <title>Desmos | Graphing Calculator</title>
+      <link rel='icon' href='calc_thumb.png'>
+   </head>
+   <div id="calculator" style="width: 100%; height: 100%;"></div>
+   <script>
+       var elt = document.getElementById('calculator');
+       var calculator = Desmos.GraphingCalculator(elt);
+       calculator.setExpression({ id: 'top', latex: 'y=0 \\{0<x<480\\}', color: '#2464b4' });
+       calculator.setExpression({ id: 'bottom', latex: 'y=360 \\{0<x<480\\}', color: '#2464b4' });
+       calculator.setExpression({ id: 'left', latex: 'x=0 \\{0<y<360\\}', color: '#2464b4' });
+       calculator.setExpression({ id: 'right', latex: 'x=480 \\{0<y<360\\}', color: '#2464b4' });
+       calculator.setExpression({ id: 'frame', latex: 'frame=0' });
+   
+       function changeGraph(key, latex, frame) {
+           calculator.removeExpression({ id: 'frame' });
+           calculator.setExpression({ id: 'frame', latex: `frame=${frame}` });
+
+           while (key > 0) {
+               calculator.removeExpression({ id: 'expr-' + key });
+               key--;
+           }
+           for (var expr of latex) {
+               console.log(expr);
+               key++;
+               calculator.setExpression({ id: 'expr-' + key, latex: expr, color: '#2464b4' });
+           }
+           return key;
+       }
+   
+       function go() {
+           var key = 0;
+           var frame = 0;
+   
+           setInterval(function() {
+               if (frame < latexFrames.length) {
+                   key = changeGraph(key, latexFrames[frame], frame);
+                   frame++;
+               }
+           }, 1000/24)
+       }
+
+       function test() {
+           xhr = new XMLHttpRequest();
+           xhr.open("GET", "http://127.0.0.1:5000/");
+           xhr.send();
+   
+           xhr.onload = function() {
+               latexFrames = JSON.parse(xhr.response);
+                changeGraph(0, latexFrames[100], 100);
+           }
+       }
+   
+       function init() {
+           xhr = new XMLHttpRequest();
+           xhr.open("GET", "http://127.0.0.1:5000/");
+           xhr.send();
+   
+           xhr.onload = function() {
+               latexFrames = JSON.parse(xhr.response);
+               go();
+           }
+       }
+   
+   </script>
+</html>
