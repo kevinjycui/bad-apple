@@ -1,0 +1,16 @@
+name: BadApple
+version: 1.0
+api-version: 1.16
+author: Junferno
+main: com.junferno.badapple.BadApple
+description: Play Bad Apple!! on Minecraft creepers
+
+commands:
+  player:
+    description: Sets player
+  badapple:
+    description: Plays Bad Apple!!
+  init:
+    description: Initialises a step
+  erase:
+    description: Removes creepers
