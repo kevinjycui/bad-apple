@@ -9,19 +9,19 @@ import json
 # FRAMES = 4382
 
 WIDTH = 36
-HEIGHT = 28
-FRAMES = 4383
-FPS = 60
+HEIGHT = 10
+FRAMES = 150
+FPS = 20
 
 # BASE_PNG_DIR = 'pngs'
 # BASE_PNG_PATH = BASE_PNG_DIR + '/png%d.png'
-BASE_PNG_DIR = 'frames'
-BASE_PNG_PATH = BASE_PNG_DIR + '/frame%d.png'
+BASE_PNG_DIR = 'pngs'
+BASE_PNG_PATH = BASE_PNG_DIR + '/png%d.png'
 
 matrix_arr = []
 
-for i in range(FRAMES):
-    with Image.open(BASE_PNG_PATH % (i + 1)) as im:
+for i in range(0, FRAMES, 60//FPS):
+    with Image.open(BASE_PNG_PATH % (i + 1)).resize((WIDTH, HEIGHT)) as im:
         px = im.load()
     matrix = []
     for x in range(HEIGHT):
@@ -41,7 +41,7 @@ for i in range(FRAMES):
     matrix_arr.append(matrix)
 
 # Save matrix
-with open('data-hd.json', 'w+') as f:
+with open('data3.json', 'w+') as f:
     json.dump(matrix_arr, f)
 
 # Simple command-line example test
