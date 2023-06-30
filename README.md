@@ -24,3 +24,4 @@ The internet challenge of playing the [Bad Apple!! PV](https://www.youtube.com/w
  | Unity Game Engine | [unity.com](https://unity.com/) | [unity-ragdolls](unity-ragdolls) | [<img src='https://www.youtube.com/s/desktop/7449ebf7/img/favicon_32x32.png' width='16px'/>](https://youtu.be/kjsbMFfEl8w?t=490) |
  | YouTube Studio | [studio.youtube.com](https://studio.youtube.com/) | [yt-studio](yt-studio) | [<img src='https://www.youtube.com/s/desktop/7449ebf7/img/favicon_32x32.png' width='16px'/>](https://youtu.be/WOQil8pL0oU) |
  | DMOJ: Modern Online Judge | [dmoj.ca](https://dmoj.ca/) | [dmoj](dmoj) | [<img src='https://www.youtube.com/s/desktop/7449ebf7/img/favicon_32x32.png' width='16px'/>](https://youtu.be/tZ5FBBnHfm4?t=686) |
+ | Turing Machine | | [turing-machines](turing-machines) | [<img src='https://www.youtube.com/s/desktop/7449ebf7/img/favicon_32x32.png' width='16px'/>](https://youtu.be/nVFvMbofFNc?t=906) |
