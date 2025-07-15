@@ -1,6 +1,6 @@
 [submodule "css/css-video"]
 	path = css/css-video
 	url = git@github.com:kevinjycui/css-video.git
-[submodule "scrabble"]
-	path = scrabble
+[submodule "scrabble/scrabble"]
+	path = scrabble/scrabble
 	url = git@github.com:kevinjycui/Scrapple.git
